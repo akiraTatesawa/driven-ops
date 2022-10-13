@@ -21,7 +21,7 @@ services:
     depends_on:
       - db_postgres
     env_file:
-      - server/.env
+      - back-end/.env
     volumes:
       - .:/usr/src
   
