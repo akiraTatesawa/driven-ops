@@ -20,6 +20,6 @@ COPY --from=builder /usr/src/package*.json ./
 COPY --from=builder /usr/src/dist ./dist
 COPY --from=builder /usr/src/prisma ./prisma
 
-EXPOSE 4000
+EXPOSE 5000
 
 CMD ["npm", "run", "start:migrate"]
