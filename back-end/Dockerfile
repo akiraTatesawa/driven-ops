@@ -22,4 +22,4 @@ COPY --from=builder /usr/src/prisma ./prisma
 
 EXPOSE 4000
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start:migrate"]
