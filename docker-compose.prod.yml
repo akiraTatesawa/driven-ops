@@ -5,9 +5,9 @@ services:
     ports:
       - 2345:5432
     environment:
-     - POSTGRES_USER=postgres
-     - POSTGRES_PASSWORD=postgres
-     - POSTGRES_DB=students
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=students
     volumes:
       - postgres_students:/var/lib/postgresql/data
 
@@ -24,7 +24,7 @@ services:
       - back-end/.env
     volumes:
       - .:/usr/src
-  
+
   react_app_students:
     container_name: react_app_students
     build: ./front-end
