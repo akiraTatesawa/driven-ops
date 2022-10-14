@@ -1,0 +1,21 @@
+services:
+    db_postgres:
+        image: postgres:13
+        container_name: db_postgres
+        restart: always
+        ports:
+            - 2345:5432
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=students-tests
+
+    node_app_students:
+        container_name: node_app_students
+        build: ./back-end
+        ports:
+            - 5000:5000
+        depends_on:
+            - db_postgres
+        env_file:
+            - back-end/.env.test

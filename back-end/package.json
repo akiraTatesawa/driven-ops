@@ -8,14 +8,10 @@
     "build": "tsc",
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
-    "prisma:seed": "prisma db seed",
     "dev": "nodemon src/server.ts",
     "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test cross-env NODE_OPTIONS=--experimental-vm-modules jest -- -i",
     "start": "node dist/src/server.js",
     "start:migrate": "prisma generate && prisma migrate deploy && npm run start"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
