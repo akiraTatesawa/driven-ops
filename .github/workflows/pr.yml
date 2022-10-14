@@ -3,13 +3,14 @@ on: [pull_request]
 jobs:
   PullRequest:
     runs-on: ubuntu-latest
+    environment: TEST
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1
         with:
-          envkey_DATABASE_URL: "postgresql://postgres:postgres@db_postgres:5432/students-test?schema=public"
+          envkey_DATABASE_URL: ${{ secrets.DATABASE_URL_TEST }}
           file_name: .env.test
           directory: back-end/
           fail_on_empty: true
