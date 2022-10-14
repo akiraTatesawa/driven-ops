@@ -10,7 +10,7 @@ jobs:
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_DATABASE_URL: "postgresql://postgres:postgres@db_postgres:5432/students-test?schema=public"
-          file_name: .env.test
+          file_name: back-end/.env.test
       - name: Run tests
         run: docker-compose -f docker-compose.test.yml run node_app_students npm run test
       - name: Build
